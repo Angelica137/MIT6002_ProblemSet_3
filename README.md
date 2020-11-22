@@ -17,7 +17,7 @@ Computational modeling has played an important role in the study of viruses such
 Spread of a Virus in a Person
 In reality, diseases are caused by viruses and have to be treated with medicine, so in the remainder of this problem set, we'll be looking at a detailed simulation of the spread of a virus within a person. We've provided you with skeleton code in ps3b.py.
 
-## Part B: Problem 1: Implementing a Simple Simulation (No Drug Treatment)
+# Part B: Problem 1: Implementing a Simple Simulation (No Drug Treatment)
 
 We start with a trivial model of the virus population - the patient does not take any drugs and the viruses do not acquire resistance to drugs. We simply model the virus population inside a patient as if it were left untreated.
 
