@@ -127,3 +127,20 @@ Note: If you want to use numpy arrays, you should add the following lines at the
 import os
 os.environ["OPENBLAS_NUM_THREADS"] = "1"
 Then, do import numpy as np and use np.METHOD_NAME in your code.
+
+# Part B: Problem 4: TreatedPatient Class
+
+We also need a representation for a patient that accounts for the use of drug treatments and manages a collection of ResistantVirus instances. For this, we introduce the TreatedPatient class, which is a subclass of Patient. TreatedPatient must make use of the new methods in ResistantVirus and maintain the list of drugs that are administered to the patient.
+
+Drugs are given to the patient using the TreatedPatient class's addPrescription() method. What happens when a drug is introduced? The drugs we consider do not directly kill virus particles lacking resistance to the drug, but prevent those virus particles from reproducing (much like actual drugs used to treat HIV). Virus particles with resistance to the drug continue to reproduce normally. Implement the TreatedPatient class.
+
+Hint: reproduce function child resistances
+If you are really unsure about how to think about what each child resistances should be changed to, here is a different approach. If the probability mutProb is successful, the child resistance switches. Otherwise, the child resistance stays the same as the parent resistance.
+
+Note: If you want to use numpy arrays, you should add the following lines at the beginning of your code for the grader:
+import os
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+Then, do import numpy as np and use np.METHOD_NAME in your code.
+
+Code Editor
+1
