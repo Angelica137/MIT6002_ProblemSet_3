@@ -58,7 +58,11 @@ class SimpleVirus(object):
         False.
         """
 
-        # TODO
+        prob = random.random()
+        if prob <= self.clearProb:
+            return True
+        else:
+            return False
 
     
     def reproduce(self, popDensity):
