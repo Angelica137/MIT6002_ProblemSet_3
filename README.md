@@ -100,7 +100,8 @@ pylab.ylabel("Average Virus Population")
 pylab.legend(loc = "best")
 pylab.show()
 
-Part B: Problem 2-2
+## Part B: Problem 2-2
+
 0.0/5.0 points (graded)
 A good question to consider as you look at your plot is: about how long does it take before the population stops growing?
 
@@ -110,3 +111,19 @@ About 150 time-steps ++
 About 200 time-steps
 About 250 time-steps
 ?
+
+# Part B: Problem 3: Implementing a Simulation With Drugs
+
+In this problem, we consider the effects of both administering drugs to the patient and the ability of virus particle offsprings to inherit or mutate genetic traits that confer drug resistance. As the virus population reproduces, mutations will occur in the virus offspring, adding genetic diversity to the virus population. Some virus particles gain favorable mutations that confer resistance to drugs.
+
+## ResistantVirus class
+
+In order to model this effect, we introduce a subclass of SimpleVirus called ResistantVirus. ResistantVirus maintains the state of a virus particle's drug resistances, and accounts for the inheritance of drug resistance traits to offspring. Implement the ResistantVirus class.
+
+Hint: reproduce function child resistances
+If you are really unsure about how to think about what each child resistances should be changed to, here is a different approach. If the probability mutProb is successful, the child resistance switches. Otherwise, the child resistance stays the same as the parent resistance.
+
+Note: If you want to use numpy arrays, you should add the following lines at the beginning of your code for the grader:
+import os
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+Then, do import numpy as np and use np.METHOD_NAME in your code.
