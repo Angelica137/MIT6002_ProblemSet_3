@@ -272,8 +272,7 @@ class ResistantVirus(SimpleVirus):
         try:
             return self.resistances[drug]
         except KeyError:
-           return False
-
+            return False
 
     def reproduce(self, popDensity, activeDrugs):
         """
