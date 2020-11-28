@@ -36,6 +36,9 @@ class SimpleVirus(object):
         """
 
         # TODO
+        self.maxBirthProb = maxBirthProb
+        self.clearProb = clearProb
+
 
     def getMaxBirthProb(self):
         """
