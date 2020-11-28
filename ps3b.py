@@ -254,7 +254,7 @@ class ResistantVirus(SimpleVirus):
         """
         Returns the mutation probability for this virus.
         """
-        # TODO
+        return self.mutProb
 
     def isResistantTo(self, drug):
         """
