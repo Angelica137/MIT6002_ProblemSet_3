@@ -267,8 +267,12 @@ class ResistantVirus(SimpleVirus):
         returns: True if this virus instance is resistant to the drug, False
         otherwise.
         """
-        
-        # TODO
+        # check if the virus is resitatn to the drug.
+        # use the resitances dictioanry against the drug passed as argument
+        try:
+            return self.resistances[drug]
+        except KeyError:
+           return False
 
 
     def reproduce(self, popDensity, activeDrugs):
