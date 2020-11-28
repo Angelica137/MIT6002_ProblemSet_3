@@ -34,7 +34,7 @@ class SimpleVirus(object):
         maxBirthProb: Maximum reproduction probability (a float between 0-1)        
         clearProb: Maximum clearance probability (a float between 0-1).
         """
-				
+
         self.maxBirthProb = maxBirthProb
         self.clearProb = clearProb
 
@@ -43,13 +43,13 @@ class SimpleVirus(object):
         """
         Returns the max birth probability.
         """
-        # TODO
+        return self.maxBirthProbß
 
     def getClearProb(self):
         """
         Returns the clear probability.
         """
-        # TODO
+        return self.clearProb
 
     def doesClear(self):
         """ Stochastically determines whether this virus particle is cleared from the
