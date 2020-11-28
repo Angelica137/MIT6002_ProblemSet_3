@@ -125,7 +125,7 @@ class Patient(object):
         """
         Returns the max population.
         """
-        # TODO
+        return self.maxPop
 
 
     def getTotalPop(self):
