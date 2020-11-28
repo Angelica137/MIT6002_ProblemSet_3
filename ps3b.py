@@ -134,7 +134,7 @@ class Patient(object):
         returns: The total virus population (an integer)
         """
 
-        # TODO        
+        return len(self.viruses)    
 
 
     def update(self):
