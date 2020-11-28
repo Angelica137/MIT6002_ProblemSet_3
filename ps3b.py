@@ -161,6 +161,8 @@ class Patient(object):
             if virus.doesClear() == True
                 self.viruses.remove(virus)
 
+        popDensity = len(self.viruses) / self.maxPop
+
 
 
 #
