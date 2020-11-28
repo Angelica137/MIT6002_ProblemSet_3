@@ -240,7 +240,7 @@ class ResistantVirus(SimpleVirus):
         """
 
         # inherits form SimpleVirus
-        super.()__init__(maxBirthProb, clearProb)
+        super().__init__(maxBirthProb, clearProb)
         self.resistances = resistances
         self.mutProb = mutProb
 
@@ -319,9 +319,24 @@ class ResistantVirus(SimpleVirus):
         NoChildException if this virus particle does not reproduce.
         """
 
-        # TODO
-
-            
+        self.popDensity = popDensity
+        self.activeDrugs = activeDrugs
+        if all([self.isResistantTo(i) for i in self.activeDrugs]) == True:
+            prob = random.random()
+            if prob <= self.maxBirthProb * (1 - self.popDensity):
+                new_resistances = self.resistances.copy()
+                for key in self.resistances.keys():
+                    prob_b = random.random()
+                    if prob_b <= self.getMutProb():
+                        if self.resistances[key] == True:
+                            new_resistances[key] = False
+                        else:
+                            new_resistances[key] = True
+                return ResistantVirus(self.maxBirthProb, self.clearProb, new_resistances, self.mutProb)
+            else:
+                raise NoChildException
+        else:
+            raise NoChildException
 
 class TreatedPatient(Patient):
     """
