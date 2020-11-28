@@ -2,6 +2,7 @@
 
 import random
 import pylab
+import numpy as np
 
 ''' 
 Begin helper code
