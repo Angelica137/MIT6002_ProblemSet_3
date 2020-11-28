@@ -111,7 +111,8 @@ class Patient(object):
         maxPop: the maximum virus population for this patient (an integer)
         """
 
-        # TODO
+        self.viruses = viruses
+        self.maxPop = maxPop
 
     def getViruses(self):
         """
