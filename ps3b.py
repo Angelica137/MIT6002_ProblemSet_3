@@ -158,10 +158,18 @@ class Patient(object):
 
         viruses_copy = self.viruses[:]
         for virus in viruses_copy:
-            if virus.doesClear() == True
+            if virus.doesClear() == True:
                 self.viruses.remove(virus)
 
         popDensity = len(self.viruses) / self.maxPop
+
+        viruses_copy_b = self.viruses[:]
+        for virus in viruses_copy_b:
+            try:
+                virus.reproduce(popDensity)
+                self.viruses.append(virus)
+            except NoChildException:
+                continue
 
 
 
