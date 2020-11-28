@@ -73,3 +73,40 @@ maxBirthProb (maximum reproduction probability for a virus particle) = 0.1
 clearProb (maximum clearance probability for a virus particle) = 0.05
 
 Thus, your simulation should be instantiatating one Patient with a list of 100 SimpleVirus instances. Each SimpleVirus instance in the viruses list should be initialized with the proper values for maxBirthProb and clearProb.
+
+Hint: graphing
+Your graph should contain one line that represents the average of many different trials. One way of computing the average involves holding all of your data in one list, with one element for each of 300 time steps, and adding to each data point during each trial. Then, at the end, each element of the list is divided by the total number of trials, thus taking the average of each element of the list. However, if this idea confuses you, feel free to ignore the hint and implement it however makes the most sense to you.
+
+Consult reference documentation on pylab as reference. Scroll down on the page to find a list of all the plotting commands in pylab.
+
+Hint: testing your simulation
+Compared to the previous problem sets, testing your simulation code is more challenging, because the behavior of the code is stochastic, and the expected output is not exactly known. How do you know whether your plots are correct or not? One way to test this is to run the simulation with extreme input values (i.e. initialization parameters), and check that the output matches your intuition. For example, if maxBirthProb is set to 0.99 instead of 0.1, then you would expect that the virus population rapidly increases over a short period of time. Similarly, if you run your simulation with clearProb = 0.99 and maxBirthProb = 0.1, then you should see the virus population quickly decreasing within a small number of steps. You can also try to vary the input values, and check whether the output plots change as you expect. For example, if you run multiple simuation runs, each time increasing maxBirthProb, the curves in the successive plots should show an "upward" trend, since the virus will reproduce faster with a higher maxBirthProb.
+
+For further testing, we have provided the .pyc (compiled Python) files for the completed Patient and SimpleVirus classes (and for Problem 5, the ResistantVirus and TreatedPatient classes) that you can use to confirm that your code is generating the correct results during simulation.
+
+If you comment out your versions of these classes in ps3b.py, and add the following import statements to the top of your file, you can run the simulation using our pre-compiled implementation of these classes to make sure you are obtaining the correct results. This is a good way to test if you've implemented these classes correctly. Make sure to comment out the import statement and uncomment your implementations before moving to Problem 4.
+
+Notes:
+
+Note: If you want to use numpy arrays, you should add the following lines at the beginning of your code for the grader:
+import os
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+Then, do import numpy as np and use np.METHOD_NAME in your code.
+Use this code in the grader, to plot:
+pylab.plot(YOUR_Y_AXIS_VALUES, label = "SimpleVirus")
+pylab.title("SimpleVirus simulation")
+pylab.xlabel("Time Steps")
+pylab.ylabel("Average Virus Population")
+pylab.legend(loc = "best")
+pylab.show()
+
+Part B: Problem 2-2
+0.0/5.0 points (graded)
+A good question to consider as you look at your plot is: about how long does it take before the population stops growing?
+
+About 20 time-steps
+About 80 time-steps
+About 150 time-steps ++
+About 200 time-steps
+About 250 time-steps
+?
