@@ -156,7 +156,10 @@ class Patient(object):
         integer)
         """
 
-        # TODO
+        viruses_copy = self.viruses[:]
+        for virus in viruses_copy:
+            if virus.doesClear() == True
+                self.viruses.remove(virus)
 
 
 
