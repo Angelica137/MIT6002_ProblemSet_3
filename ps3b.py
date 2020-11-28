@@ -244,12 +244,11 @@ class ResistantVirus(SimpleVirus):
         self.resistances = resistances
         self.mutProb = mutProb
 
-
     def getResistances(self):
         """
         Returns the resistances for this virus.
         """
-        # TODO
+        return self.resitances
 
     def getMutProb(self):
         """
