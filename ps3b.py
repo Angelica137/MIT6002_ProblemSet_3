@@ -384,7 +384,7 @@ class TreatedPatient(Patient):
         patient.
         """
 
-        # TODO
+        return self.prescription
 
 
     def getResistPop(self, drugResist):
