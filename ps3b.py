@@ -399,7 +399,12 @@ class TreatedPatient(Patient):
         drugs in the drugResist list.
         """
 
-        # TODO
+        self.drugResist = drugResist
+        resistant_pop = 0
+        for virus in self.viruses:
+            if all([virus.isResistantTo(drug) for drugin self.drugResist]) == True:
+                resistant_pop += 1
+        return resistant_pop
 
 
     def update(self):
