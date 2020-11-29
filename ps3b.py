@@ -402,7 +402,7 @@ class TreatedPatient(Patient):
         self.drugResist = drugResist
         resistant_pop = 0
         for virus in self.viruses:
-            if all([virus.isResistantTo(drug) for drugin self.drugResist]) == True:
+            if all([virus.isResistantTo(drug) for drug in self.drugResist]) == True:
                 resistant_pop += 1
         return resistant_pop
 
@@ -428,7 +428,20 @@ class TreatedPatient(Patient):
         integer)
         """
 
-        # TODO
+        viruses_copy = self.viruses[:]
+        for virus in viruses_copy:
+            if virus.doesClear() == True:
+                self.viruses.remove(virus)
+
+        popDensity = len(self.viruses) / self.maxPop
+
+        viruses_copyb = self.viruses[:]
+        for virus in viruses_copyb:
+            try:
+                virus.reproduce(popDensity, self.prescription)
+                self.viruses.append(virus)
+            except NoChildException:
+                continue
 
 
 
