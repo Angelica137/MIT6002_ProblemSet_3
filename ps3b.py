@@ -371,7 +371,9 @@ class TreatedPatient(Patient):
         postcondition: The list of drugs being administered to a patient is updated
         """
 
-        # TODO
+        self.newDrug = newDrug
+        if self.newDrug not in self.prescription:
+            self.prescription.append(self.newDrug)
 
 
     def getPrescriptions(self):
